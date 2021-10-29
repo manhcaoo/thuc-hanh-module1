@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      Array.prototype.delete = function (pos) {
+        if (!this.length) throw "array is empty";
+        if (pos < this.length) {
+          for (var i = pos; i < this.length - 1; i++) {
+            if (i < pos) continue;
+            this[i] = this[i + 1];
+          }
+          this.length = this.length - 1;
+          return this;
+        }
+        alert(
+          "index " +
+            pos +
+            " outside of array length, so the array does not change. Press Ok to see"
+        );
+      };
+      var arr = [1, 2, 3, 4, 6];
+      arr.delete(3);
+      alert(arr);
+    </script>
+  </body>
+</html>

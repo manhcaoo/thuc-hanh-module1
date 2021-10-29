@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style id="compiled-css" type="text/css">
+      canvas {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas width="400" height="400" id="myCanvas" >
+    <script type="text/javascript">
+      context = document.getElementById("myCanvas").getContext("2d");
+      
+      
+      
+        class Rectangle {
+        x;
+        y;
+        width;
+        height;
+        color;
+        constructor(x, y, width, height, color) {
+        this.x = params.x || 0;
+        this.y = params.y || 0;
+        this.width = params.width || 0;
+        this.height = params.height || 0;
+        this.color = params.color || "#FFFFFF";
+        this.strokeStyle = params.strokeStyle || "#000000";
+        this.lineWidth = params.lineWidth || 0;
+    }
+       render() {
+          if (this.color) {
+           return context.color = this.color;
+           return context.fillRect(this.x, this.y, this.width, this.height);
+          }
+          if (this.strokeStyle && this.lineWidth) {
+            return context.strokeStyle = this.strokeStyle;
+            return context.lineWidth = this.lineWidth;
+            return  context.strokeRect(this.x, this.y, this.width, this.height);
+          }
+        };
+      }
+      
+       let firstRec =  new Rectangle( 10, 10,300,100, "#000000")
+        firstRec.render();
+  
+    </script>
+  </body>
+</html>
